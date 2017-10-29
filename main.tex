@@ -1,0 +1,107 @@
+\RequirePackage{fix-cm}
+\documentclass[ twoside=semi,openright,titlepage,numbers=noenddot,headinclude,
+                footinclude=false,cleardoublepage=empty,abstractoff,
+                BCOR=5mm,paper=a4,fontsize=12pt,
+                ngerman,american
+                ]{scrreprt}
+
+% Make all your adjustments in here
+\input{classicthesis-config}
+
+% Bibliographies 
+\addbibresource{references.bib}
+%\addbibresource[label=ownpubs]{ALaska_Publications.bib}
+
+\usepackage[]{hyperref}
+\hypersetup{
+    colorlinks=true,
+} 
+
+%\usepackage{setspace}
+ %\setstretch{1.66667}
+
+% Hyphenation
+%\hyphenation{put special hyphenation here}
+
+% Composition of the document
+
+\begin{document}
+
+  \raggedbottom
+  \selectlanguage{ngerman}
+  %\renewcommand*{\bibname}{new name}
+  %\setbibpreamble{}
+  \pagenumbering{roman}
+  \pagestyle{plain}
+
+
+  % Frontmatter
+
+  %\include{FrontBackmatter/DirtyTitlepage}
+  \include{FrontBackmatter/Titlepage}
+  \include{FrontBackmatter/Titleback}
+  %\cleardoublepage\include{FrontBackmatter/Dedication}
+  %\cleardoublepage\include{FrontBackmatter/Foreword}
+  %\cleardoublepage\include{FrontBackmatter/Abstract}
+  %\cleardoublepage\include{FrontBackmatter/Publications}
+  %\cleardoublepage\include{FrontBackmatter/Acknowledgments}
+  \pagestyle{scrheadings}
+  \cleardoublepage\include{FrontBackmatter/Contents}
+
+
+  % Mainmatter
+
+  \cleardoublepage\pagenumbering{arabic}
+  %\setcounter{page}{90}
+  % use \cleardoublepage here to avoid problems with pdfbookmark
+
+  % work-around to have small caps also here in the headline
+  \manualmark
+  \markboth{\spacedlowsmallcaps{Vorbemerkungen}}{\spacedlowsmallcaps{Vorbemerkungen}} % work-around to have small caps also
+  %\phantomsection 
+  %\refstepcounter{dummy}
+  \addtocontents{toc}{\protect\vspace{\beforebibskip}} % to have the bib a bit from the rest in the toc
+  \addcontentsline{toc}{chapter}{\tocEntry{Vorbemerkungen}}
+  %\addcontentsline{toc}{part}{Vorbemerkungen}
+
+  \cleardoublepage
+  \ctparttext{Was mich im innersten bewegt und bewegte und zu dieser Arbeit
+    hinführte.}
+  \part*{Meine ganz persönliche innige Motivation}
+  \include{Chapters/Einleitung}
+
+
+  \cleardoublepage
+  \ctparttext{Beschreibung von Inhalt und Form aus literarischer,
+    philosophischer und naturwissenschaftlicher  Perspektive.}
+  \part{Die Motivation und das Epos}
+  \include{Chapters/Abriss}
+  \include{Chapters/Chapter01}
+
+  \cleardoublepage
+  \ctparttext{... am Beispiel des ersten Buches und der Physik des Universums
+    aus physikalischer und philosophischer Sicht.}
+  \part{Ethik und Ästhetisierung des Erhabenen wissenschaftlicher Erkenntnisse
+    im Vergleich zu der des Erhabenen des rein Kunstschönen}
+  \include{Chapters/Chapter02}
+
+  \cleardoublepage
+  \ctparttext{Zusammenführung der beiden vorherigen Teile.}
+  \part{Synthese}
+  \include{Chapters/Chapter03}
+
+
+  % Backmatter
+
+  \appendix
+  %\renewcommand{\thechapter}{\alph{chapter}}
+  \cleardoublepage
+  \part*{Anhang}
+  DEMO
+  \include{Chapters/Chapter0A}
+
+  \cleardoublepage\include{FrontBackmatter/Bibliography}
+  \cleardoublepage\include{FrontBackmatter/Declaration}
+  \cleardoublepage\include{FrontBackmatter/Colophon}
+
+\end{document}

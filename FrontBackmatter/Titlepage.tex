@@ -1,0 +1,43 @@
+%*******************************************************
+% Titlepage
+\definecolor{SiegelGrau}{cmyk}{0,0,0,0.8}
+
+\begin{titlepage}
+    % if you want the titlepage to be centered, uncomment and fine-tune the line below (KOMA classes environment)
+    \begin{addmargin}[-1cm]{-3cm}
+    \begin{center}
+        \large  
+
+        \hfill
+
+        \vfill
+
+        \begingroup
+            \color{Maroon}\spacedallcaps{\myTitle} \\
+            \color{MidnightBlue}\spacedlowsmallcaps{\mySubtitle}\\ \bigskip
+        \endgroup
+
+        \spacedlowsmallcaps{\myName}
+
+        \vfill
+        \vfill
+
+        \includegraphics[width=5cm]{gfx/fau-siegel_grau} \\ \medskip
+        \medskip   
+        \medskip   
+
+        %\mySubtitle \\ 
+        \medskip   
+        %\myDegree \\
+        \color{SiegelGrau}\myDepartment \\                            
+        %\myFaculty \\
+        \color{SiegelGrau}\myUni, \myLocation \\ \bigskip
+
+        \color{SiegelGrau}\myTime\
+        % -- \myVersion
+
+        %\vfill                      
+
+    \end{center}  
+  \end{addmargin}       
+\end{titlepage}   
